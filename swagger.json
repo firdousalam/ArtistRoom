@@ -1,0 +1,228 @@
+{
+   "swagger":"2.0",
+   "info":{
+      "version":"1.0.0",
+      "title":"Artistroom Website API",
+      "description":"Artistroom Website API",
+      "license":{
+         "name":"MIT",
+         "url":"https://opensource.org/licenses/MIT"
+      }
+   },
+   "servers":[
+      {
+         "url":"/",
+         "description":"Local Dev, or from Heroku"
+      }
+   ],
+   "tags":[
+      {
+         "name":"Project",
+         "description":"API for users in the system"
+      }
+   ],
+   "schemes":[
+      "http"
+   ],
+   "consumes":[
+      "application/json"
+   ],
+   "produces":[
+      "application/json"
+   ],
+   "paths":{
+	   "/user/loginUser":{
+	         "post":{
+	            "tags":[
+	               "Artistroom login"
+	            ],
+	            "description":"User Login",
+	            "parameters":[
+	               {
+	                  "name":"fetch",
+	                  "in":"body",
+	                  "schema":{
+	                      "$ref":"#/definitions/LoginUser"
+	                  }
+	               }
+	            ],
+	            "produces":[
+	               "application/json"
+	            ],
+	            "responses":{
+	               "200":{
+	                  "description":"Ok",
+	                  "schema":{
+	                     
+	                  }
+	               }
+	            }
+	         }
+	      },
+	   "/user/registerUser":{
+	         "post":{
+	            "tags":[
+	               "Artistroom User registration"
+	            ],
+	            "description":"Artistroom User registration API",
+	            "parameters":[
+	               {
+	                  "name":"fetch",
+	                  "in":"body",
+	                  "schema":{
+	                      "$ref":"#/definitions/registerUser"
+	                  }
+	               }
+	            ],
+	            "produces":[
+	               "application/json"
+	            ],
+	            "responses":{
+	               "200":{
+	                  "description":"Ok",
+	                  "schema":{
+	                     
+	                  }
+	               }
+	            }
+	         }
+	      },
+		"/user/updateUser":{
+	         "post":{
+	            "tags":[
+	               "Artistroom User Update"
+	            ],
+	            "description":"Artistroom User Update API",
+	            "parameters":[
+	               {
+	                  "name":"fetch",
+	                  "in":"body",
+	                  "schema":{
+	                      "$ref":"#/definitions/updateUser"
+	                  }
+	               }
+	            ],
+	            "produces":[
+	               "application/json"
+	            ],
+	            "responses":{
+	               "200":{
+	                  "description":"Ok",
+	                  "schema":{
+	                     
+	                  }
+	               }
+	            }
+	         }
+	      }
+
+   },
+   "definitions":{
+      "LoginUser":{
+         "properties":{
+            "UserName":{
+               "type":"string"
+            },
+            "password":{
+               "type":"string"
+            }
+         }
+      },
+      
+      "registerUser":{
+         "properties":{
+            "UserName":{
+               "type":"string"
+            },
+            "Email":{
+               "type":"string"
+            },
+            "Password":{
+               "type":"string"
+            },
+            "DateOfBirth":{
+                "type": "string"
+            },
+			"PrimaryInterest":{
+               "type":"string"
+            },
+            "AboutMe":{
+               "type":"string"
+            },
+            "Name":{
+               "type":"string"
+            },
+            "Gender":{
+                "type": "string"
+            },
+			"Location":{
+               "type":"string"
+            },
+            "ContactNumber":{
+               "type":"string"
+            },
+            "PaidServices":{
+               "type":"boolean"
+            },
+            "Association":{
+                "type": "string"
+            }
+         }
+      },
+       
+      "updateUser":{
+         "properties":{
+            "UserName":{
+               "type":"string"
+            },
+            "Email":{
+               "type":"string"
+            },
+            "Password":{
+               "type":"string"
+            },
+            "DateOfBirth":{
+                "type": "string"
+            },
+			"PrimaryInterest":{
+               "type":"string"
+            },
+            "AboutMe":{
+               "type":"string"
+            },
+            "Name":{
+               "type":"string"
+            },
+            "Gender":{
+                "type": "string"
+            },
+			"Location":{
+               "type":"string"
+            },
+            "ContactNumber":{
+               "type":"string"
+            },
+            "PaidServices":{
+               "type":"boolean"
+            },
+            "Association":{
+                "type": "string"
+            }
+            
+         }
+      },
+      "Response":{
+         "properties":{
+            "status":{
+               "type":"string"
+            },
+            "message":{
+               "type":"string"
+            },
+            "id":{
+               "type":"string"
+            }
+          }
+      }      
+   }
+}
